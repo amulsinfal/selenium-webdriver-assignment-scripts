@@ -1,0 +1,66 @@
+CssSelector locating strategies
+
+1. ID:
+	tagname#<id value>
+	e.g.: input#input-email
+	
+	#<id value>
+	e.g.: #input-email
+	
+	tagname[id='<id value>'] - not recommanded
+	e.g.: input[id='input-email']
+	
+2. Class:
+	tagname.<class value>
+	e.g.: button.orangehrm-login-button
+	
+	.<class value>
+	e.g.: .orangehrm-login-button
+	
+	tagname[class='<class value>'] - not recommanded
+	e.g.: button[class='orangehrm-login-button']
+	
+3. Attribute:
+	tagname[<attribute>='<attribute value>']
+	e.g.: input[placeholder='Username']
+	
+4. Combining attributes:
+
+	4.1 ID and attribute:
+		tagname#<id value>[<attribute>='<attribute value>']
+		e.g.: input#input-email[placeholder='E-Mail Address']
+		
+	4.2 Class and attribute:
+		tagname.<class value>[<attribute>='<attribute value>']
+		e.g.: input.btn-primary[value='Login']
+	
+	4.3 ID, Class and attribute:
+		tagname#<id value>.<class value>[<attribute>='<attribute value>']
+		e.g.: input#input-firstname.form-control[placeholder='First Name']
+	
+5. Substring selector
+	5.1 * Matching substring (contains)
+		tagname[<attribute>*='<Substring>']
+		e.g.: input[name^='first']
+		
+	5.1 ^ Matching prefix (starts with)
+		tagname[<attribute>^='<prefix string>']
+		e.g.: input[placeholder^='Last']
+		
+	5.3 $ Matching suffix (ends with)
+		tagname[<attribute>$='<suffix string>']
+		e.g.: a[href$='/forgotten']
+		
+6. Parent Child hierarchy
+	6.1 Descendant: Adding space between two or more tagnames, identifies direct and in direct child.
+		tagname tagname
+		e.g.: aside a[href$='/logout']
+		
+	6.2 Direct child: Adding > between two tagnames, identifies direct child.
+		tagname>tagname
+		e.g.: ul.oxd-dropdown-menu>li
+		
+	6.3 Tagname with :nth-child(index): Locate the child element from the list using the index number.
+		tagname:nth-child(index)
+		e.g.: ul.oxd-dropdown-menu li:nth-child(4)
+		
