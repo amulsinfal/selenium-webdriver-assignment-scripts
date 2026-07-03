@@ -1,0 +1,31 @@
+JavascriptExecutor
+
+Step1: Create a reference
+1. JavascriptExecutor js = (JavascriptExecutor) driver;
+
+Step2: Execute the script to perform action:
+
+1. Scrolling
+	1.1 Scroll down
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+
+	1.2 Scroll up
+		js.executeScript("window.scrollTo(document.body.scrollHeight, 0)");
+	
+	1.3 Scroll To an Element:
+		js.executeScript("arguments[0].scrollIntoView(true)", element);
+
+2. Get page title:
+	String title = js.executeScript("return document.title").toString();
+
+3. Refresh Page:
+	js.executeScript("history.go()")
+
+4. Click Element:
+	js.executeScript("arguments[0].click()", element);
+
+5. Enter Text
+	js.executeScript("arguments[0].value='Text'", element);
+
+6. HiddenElement
+	js.executeScript("arguments[0].value='Text'", hiddenElement);
