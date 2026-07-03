@@ -1,0 +1,58 @@
+
+1. Xpath with Operators
+	1. and: 
+	//tagname[@<attribute1>='<attribute value>' and @<attribute2>='<attribute value>']
+	
+	2. or:
+	//tagname[@<attribute1>='<attribute value>' or @<attribute2>='<attribute value>']
+
+2. Xpath With indexing
+	2.1 With Index:
+		(//tagname[@<attribute1>='<attribute value>'])[index]
+
+	2.2	With position(index): 
+		(//tagname[@<attribute1>='<attribute value>'])[position()=index]
+	
+3. Xpath Methods
+	3.1	text(): This method never ignore white space and it fails if text has white space
+		//tagname[text()='visible text']
+	
+	3.2	normalize-space(): this method ignore white space (It act like trim()from String)
+		//tagname[normalize-space()='visible text']
+	
+	3.3	contains():
+		//tagname[contains(@<attribute>,'<substring>')]
+		or
+		//tagname[contains(text(),'<substring>')]
+		or
+		//tagname[contains(normalize-space(),'<substring>')]
+
+	3.4	starts-with()
+		//tagname[starts-with(@<attribute>,'<Prefix string>')]
+		Or	
+		//tagname[starts-with(text(),'<Prefix string>')]
+		Or
+		//tagname[starts-with(normalize-space(),'<Prefix string>')]
+
+4. Xpath Axis
+
+	4.1	ancestor:
+		//tagname[@<attribute>='<attribute value>']//ancestor::tagname of ancestor
+			
+	4.2	parent:
+		//tagname[@<attribute>='<attribute value>']//parent::tagname of parent
+			
+	4.3	child:
+		//tagname[@<attribute>='<attribute value>']//child::tagname of child
+			
+	4.4	following:
+		//tagname[@<attribute>='<attribute value>']//following::tagname of following
+	
+	4.5	following-sibling:
+		//tagname[@<attribute>='<attribute value>']//following-sibling::tagname of following-sibling
+		
+	4.6	preceding:
+		//tagname[@<attribute>='<attribute value>']//preceding::tagname of preceding element
+		
+	4.7	preceding-sibling:
+		//tagname[@<attribute>='<attribute value>']//preceding-sibling::tagname of preceding-sibling
