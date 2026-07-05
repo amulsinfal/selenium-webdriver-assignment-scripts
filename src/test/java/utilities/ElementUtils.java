@@ -84,4 +84,13 @@ public class ElementUtils {
 			}
 		}
 	}
+	
+	public static void switchToFrameUsingIndex(WebDriver driver, int index) {
+		driver.switchTo().frame(index);
+	}
+	
+	public static void switchToFrameUsingNameOrID(WebDriver driver, String value) {
+		driver.switchTo().frame(value);
+	}
+	
 }
