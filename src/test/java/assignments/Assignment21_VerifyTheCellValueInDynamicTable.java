@@ -1,4 +1,4 @@
-package practise;
+package assignments;
 import java.time.Duration;
 import java.util.List;
 import org.openqa.selenium.By;
@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import utilities.ElementUtils;
-public class Assignment_VerifyTheCellValueInDynamicTable {
+public class Assignment21_VerifyTheCellValueInDynamicTable {
 	@Test
 	public void verifyTheCellValueInATable() throws InterruptedException {
 		WebDriver driver = new ChromeDriver();
@@ -15,19 +15,49 @@ public class Assignment_VerifyTheCellValueInDynamicTable {
 		driver.get("https://testautomationpractice.blogspot.com/");
 		WebElement tableHeading = driver.findElement(By.xpath("//h2[text()='Dynamic Web Table']"));
 		ElementUtils.scrollToElementUsingJS(driver, tableHeading);
-		String actualValue =null;
+		String actualText = null;
+		String expectedText = null;
 		
-		actualValue = getCellDetails(driver, "CPU", "Chrome");
-		System.out.println("CPU load of Chrome process: " + actualValue);
+		actualText = getCellDetails(driver, "CPU", "Chrome");
+		System.out.println("CPU load of Chrome process: " + actualText);
+		expectedText = driver.findElement(By.cssSelector("#displayValues [class='chrome-cpu']")).getText();
 		
-		actualValue = getCellDetails(driver, "Memory", "Firefox");
-		System.out.println("Memory Size of Firefox process: " + actualValue);
+		if(actualText.equals(expectedText)) {
+			System.out.println("CPU load of Chrome process is matching - Test Passed.");
+		} else {
+			System.out.println("CPU load of Chrome process is not matching - Test Failed.");
+		}
 		
-		actualValue = getCellDetails(driver, "Network", "Chrome");
-		System.out.println("Network speed of Chrome process: " + actualValue);
+		actualText = getCellDetails(driver, "Memory", "Firefox");
+		System.out.println("Memory Size of Firefox process: " + actualText);
+		expectedText = driver.findElement(By.cssSelector("#displayValues [class='firefox-memory']")).getText();
+
+		if(actualText.equals(expectedText)) {
+			System.out.println("Memory Size of Firefox process is matching - Test Passed.");
+		} else {
+			System.out.println("Memory Size of Firefox process is not matching - Test Failed.");
+		}
 		
-		actualValue = getCellDetails(driver, "Disk", "Firefox");
-		System.out.println("Disk space of Firefox process: " + actualValue);
+		actualText = getCellDetails(driver, "Network", "Chrome");
+		System.out.println("Network speed of Chrome process: " + actualText);
+		expectedText = driver.findElement(By.cssSelector("#displayValues [class='chrome-network']")).getText();
+
+		if(actualText.equals(expectedText)) {
+			System.out.println("Network speed of Chrome process is matching - Test Passed.");
+		} else {
+			System.out.println("Network speed of Chrome process is not matching - Test Failed.");
+		}
+		
+		actualText = getCellDetails(driver, "Disk", "Firefox");
+		System.out.println("Disk space of Firefox process: " + actualText);
+		expectedText = driver.findElement(By.cssSelector("#displayValues [class='firefox-disk']")).getText();
+
+		if(actualText.equals(expectedText)) {
+			System.out.println("Disk space of Firefox process is matching - Test Passed.");
+		} else {
+			System.out.println("Disk space of Firefox process is not matching - Test Failed.");
+		}
+		
 		driver.quit();
 	}
 	
