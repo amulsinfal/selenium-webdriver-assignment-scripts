@@ -192,4 +192,32 @@ Assignment 20:
   
 Automate https://the-internet.herokuapp.com/context_menu application  
 
-----------------------------------------------------------------------------------------    
+----------------------------------------------------------------------------------------  
+
+Assignment 21:  
+
+Automate Dynamic WebTable from https://testautomationpractice.blogspot.com/ app with all usecases  
+CPU load of Chrome process: 0.8%  
+Memory Size of Firefox process: 38.6 MB  
+Network speed of Chrome process: 6.9 Mbps  
+Disk space of Firefox process: 0.59 MB/s  
+  
+---------------------------------------------------------------------------  
+  
+Assignment 22:
+
+Get all capabilities for MicrosoftEdge browser and Firefox Browser  
+
+--------------------------------------------------------------------------  
+
+Assignment 23:
+
+Open Incognito browser & Navigate to amazon application and search for mobile and get all the options in console.  
+
+-----------------------------------------------------------------------------------  
+
+Assignment 24:  
+
+Navigate to Orangehrm application and automate login and logout in headless mode  
+
+------------------------------------------------------------------------  
