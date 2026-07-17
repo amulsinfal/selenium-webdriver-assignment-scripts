@@ -1,11 +1,7 @@
 package practise;
-
 import org.testng.annotations.Test;
-
 import utilities.PropertiesUtil;
-
 public class PropertiesReaderExample {
-
 	@Test
 	public void readValuesFromPropertiesFile() {
 		System.out.println("Browser value in properties file: " + PropertiesUtil.getProperties("browser"));

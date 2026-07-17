@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class PropertiesUtil {
-	
 	public static String getProperties(String key) {
 		Properties properties = new Properties();
 		String propFile = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
